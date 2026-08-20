@@ -78,7 +78,68 @@ class Vector extends Arreglo {
         System.out.println("El numero menor es: " + menor);
     }
 
+        
+        // Cuarto punto: identificar multiplos de un numero, recorriendo el vector en busca de ellos.
+    public void mostrarMultiplos(int numeroX) {
+        // Indica si encontranos al menos un multiplo
+        boolean hayMultiplos = false;
+        System.out.print("Múltiplos de " + numeroX + " hallados en el vector: ");
+        // este ciclo for recorre todo el vector y desimos que si el reciduo de la division es 0, es multiplo
+        for (int i = 0; i < 15; i++) {
+            if (numeroX != 0 && datos[i] % numeroX == 0) {
+                System.out.print(datos[i] + " ");
+                hayMultiplos = true;
+            }
         }
+        // Ponemos la condicion de que si no encuentra ningulo siga el false.
+        if (!hayMultiplos) System.out.print("No hay múltiplos de " + numeroX + " en el vector.");
+        System.out.println(); 
+    }
+
+    // Quinto punto: Calcular la suma de todos los valores
+    public int calcularSuma() {
+        // programamos un acumulador en 0
+        int suma = 0;
+        // el ciclo for recore el vector y suma cada numero 
+        for (int i = 0; i < 15; i++) suma += datos[i];
+        // Mostramos el resultado 
+        System.out.println("-> La suma total de los elementos es: " + suma);
+        return suma; 
+    }
+
+    // Sexto punto: Crear un vector con numeros por encima del promedio
+    public void mayoresAlPromedio(int sumaTotal) {
+        // Se procede a calcular el promedio en decimales. 
+        double promedio = sumaTotal / 15.0;
+        System.out.println("-> El promedio del vector es: " + promedio);
+
+        // Creamos un contador para ver cuantos valores superan al promedio
+        int cantidadMayores = 0;
+        // El for recorre el vector comparando valores con el promedio
+        for (int i = 0; i < 15; i++) {
+            if (datos[i] > promedio) cantidadMayores++;
+        }
+
+        if (cantidadMayores == 0) {
+            System.out.println("-> No hay numeros mayores al promedio.");
+        } else {
+            int[] nuevoVector = new int[cantidadMayores];
+            int pos = 0;
+            for (int i = 0; i < 15; i++) {
+                if (datos[i] > promedio) {
+                    nuevoVector[pos] = datos[i];
+                    pos++;
+                }
+            }
+            System.out.println("-> Se encontraron " + cantidadMayores + " numeros por encima del promedio.");
+            System.out.print("Nuevo Vector: [ ");
+            for (int i = 0; i < cantidadMayores; i++) {
+                System.out.print(nuevoVector[i] + " ");
+            }
+            System.out.println("]");
+        }
+    }
+}
 
 // CLASE PRINCIPAL: Arreglos
 public class Arreglos {
