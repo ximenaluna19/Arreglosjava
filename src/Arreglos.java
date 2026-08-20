@@ -45,7 +45,40 @@ class Vector extends Arreglo {
         }
         System.out.println("]");
     }
-}
+// Segundo punto: buscar un numero dentro el vector 
+// recibe el numero que se desea buscar y recorre los 15 elemeentos
+    public void buscarNumero(int numeroABuscar) {
+        boolean loEncontro = false;
+        // El ciclo for lo utilizamos para que recorra el vector y verificar si el numero coincide
+        for (int i = 0; i < 15; i++) {
+            if (datos[i] == numeroABuscar) {
+                System.out.println("-> ¡Lo encontre! El numero " + numeroABuscar + " esta en la posicion: " + i);
+                loEncontro = true;
+            }
+        }
+        if (loEncontro == false) {
+            System.out.println("-> El numero " + numeroABuscar + " no esta en el vector.");
+        }
+    }
+
+    // Tercer punto: Encontar y mostrar el numero mayor y menor del vector
+
+    public void mostrarMayorMenor() {
+        // Iniciamos con la primera posicion de Arreglos como punto inicial
+        int mayor = datos[0];
+        int menor = datos[0];
+
+// Este ciclo for va a recorrer los 15 elementos del vector registrando si si el numero actual es MAYOR o MENOR que los ya registrados, de lo contrario los actualixa. 
+        for (int i = 0; i < 15; i++) {
+            if (datos[i] > mayor) mayor = datos[i];
+            if (datos[i] < menor) menor = datos[i];
+        }
+        // Mostramos los resultados. 
+        System.out.println("El numero mayor es: " + mayor);
+        System.out.println("El numero menor es: " + menor);
+    }
+
+        }
 
 // CLASE PRINCIPAL: Arreglos
 public class Arreglos {
@@ -57,6 +90,7 @@ public class Arreglos {
         miTarea.llenarVector();
     }
 }
+
 
 
        
