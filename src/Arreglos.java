@@ -129,13 +129,13 @@ class Vector extends Arreglo {
         if (cantidadMayores == 0) {
             System.out.println("-> No hay numeros mayores al promedio.");
         } else {
-            // Creamos una NUEVA cubeta del tamaño exacto de los que le ganaron al promedio.
+            // Creamos un nuevo arreglo
             int[] nuevoVector = new int[cantidadMayores];
             int pos = 0;// Esta variable nos ayudará a saber en qué posición de la nueva cubeta vamos.
 
             // con este ciclo for volvemos a recorer el vector priginal
             for (int i = 0; i < 15; i++) {
-                // Si le gana al promedio, lo guardamos en la nueva cubeta
+                // Si le gana al promedio, lo guardamos en el nuevo arreglo
                 if (datos[i] > promedio) {
                     nuevoVector[pos] = datos[i];
                     pos++;// Si le gana al promedio, lo guardamos en la nueva cubeta
@@ -158,7 +158,7 @@ public class Arreglos {
     public static void main(String[] args) {
         // Le damos un nombre más corto a nuestro teclado ("objTeclado")
         Scanner objTeclado = Arreglo.objSc;
-        // creamos un objeto real llamado miTarea
+        // creamos un objeto llamado mi tarea
         // que tiene todos los métodos  que programamos arriba.
         Vector miTarea = new Vector();
         
